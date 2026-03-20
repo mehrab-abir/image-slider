@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+#header{
+    width:100%;
+    padding: 30px 0px;
+    background: #00004d;
+}
+.container{
+    width: 85%;
+    margin: auto;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #ffffff;
+}
+.navbar .logo{
+    font-weight: 900;
+}
+.navbar nav{
+    padding-top: 8px;
+    display: flex;
+}
+
+/*menu toggler*/
+.navbar nav .menuSwitch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.navbar nav .menuSwitch span{
+    width: 26px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 4px;
+}
+.navbar nav .menuSwitch span:last-child{
+    margin-bottom: 0px;
+}
+.navbar nav .menuSwitch{
+    display: none;
+}
+@media(max-width:576px){
+    .navbar nav .menuSwitch{
+        display: flex;
+        margin-top: 5px;
+    }
+}
+/*menu toggler ends*/
+
+/*main menu*/
+.navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+.navbar ul li a{
+    text-decoration: none;
+    padding: 7px 15px;
+    color: #ffffff;
+}
+.navbar ul li a:hover{
+    text-decoration: underline;
+}
+@media(max-width:576px){
+    .navbar ul{
+        display: none;
+    }
+}
+
+/*Responsive side menu*/
+.sideMenu{
+    width: 180px;
+    height: 100%;
+    background: #00004d;
+    padding-top: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translateX(-180px);
+    transition: transform 0.5s ease;
+}
+.translateMenu{
+    transform: translateX(0px);
+}
+.sideMenu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+.sideMenu ul li{
+    padding: 8px 0px;
+}
+.sideMenu ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+.sideMenu ul li a:hover{
+    text-decoration: underline;
+}
+.sideMenu .closeBtn{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+/*Slider starts*/
+#slider{
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+}
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.slide:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000007d;
+}
+.slide.current{
+    opacity: 1;
+}
+.slide:first-child{
+    background: url(images/img1.jpg) no-repeat center center/cover;
+}
+.slide:nth-child(2){
+    background: url(images/img2.jpg) no-repeat center center/cover;
+}
+.slide:nth-child(3){
+    background: url(images/img3.webp) no-repeat center center/cover;
+}
+.slide:nth-child(4){
+    background: url(images/img4.jpg) no-repeat center center/cover;
+}
+.slide h2{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 48px;
+}
+@media(max-width:576px){
+    #slider{
+        height: 30vh;
+    }
+}
+#artical{
+    background: #00001a;
+    padding: 10px 0px;
+}
+#artical p{
+    text-align: justify;
+    color: white;
+}
+#footer{
+    padding: 25px 0px;
+    background: #1f1f1f;
+}
+#footer .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#footer .container span{
+    color: #b6b4b4;
+}
+#footer .social-icons a{
+    color: #b6b4b4;
+    margin-right: 10px;
+    font-size: 24px;
+}
+#footer .social-icons a:last-child{
+    margin-right: 0;
+}
+#footer .social-icons a:hover{
+    color: white;
+}
